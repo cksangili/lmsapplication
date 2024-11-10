@@ -47,8 +47,8 @@ The Library Management System is designed to manage books and users in a library
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/library-management-system.git
-   cd library-management-system
+   git clone -b master https://github.com/cksangili/lmsapplication.git
+   cd lmsapplication
    ```
 
 2. **Build the Project**:
@@ -62,7 +62,12 @@ The Library Management System is designed to manage books and users in a library
    ```bash
    java -cp target/classes com.lms.app.entry.LibraryManagementSystem <command>
    ```
-
+4. **Run the JAR Program**:
+   Download LMSApplication.jar from the root path of GitHub repository and run the JAR by passing commands directly:
+   ```bash
+   java -jar LMSApplication.jar <commands>
+   Eg. commands: register user John password1 or login John password1
+   ```
 ---
 
 ## Usage
@@ -139,7 +144,7 @@ Here's a sample JUnit test for the `register` command:
 ```java
 @Test
 public void testRegisterAdmin() throws Exception {
-    String[] args = {"register", "admin", "Alice", "password1"};
+    String[] args = {"register", "user", "John", "password1"};
     String output = tapSystemOut(() -> {
         LibraryManagementSystem.main(args);
     });
