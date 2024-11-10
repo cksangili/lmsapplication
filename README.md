@@ -60,7 +60,7 @@ The Library Management System is designed to manage books and users in a library
 3. **Run the Program**:
    After building, run the program by passing commands directly:
    ```bash
-   java -cp target/classes com.lms.sys.LibraryManagementSystem <command>
+   java -cp target/classes com.lms.app.entry.LibraryManagementSystem <command>
    ```
 
 ---
@@ -70,7 +70,7 @@ The Library Management System is designed to manage books and users in a library
 ### Run Commands
 Run the program using:
 ```bash
-java -cp target/classes com.lms.sys.LibraryManagementSystem <command> <arguments>
+java -cp target/classes com.lms.app.entry.LibraryManagementSystem <command> <arguments>
 ```
 
 Replace `<command>` and `<arguments>` with specific commands and arguments as outlined in the [Command Reference](#command-reference).
@@ -79,17 +79,17 @@ Replace `<command>` and `<arguments>` with specific commands and arguments as ou
 
 1. **Register an Admin**:
    ```bash
-   java -cp target/classes com.lms.sys.LibraryManagementSystem register admin Alice password1
+   java -cp target/classes com.lms.app.entry.LibraryManagementSystem register admin Alice password1
    ```
 
 2. **Login as a User**:
    ```bash
-   java -cp target/classes com.lms.sys.LibraryManagementSystem login user Bob password123
+   java -cp target/classes com.lms.app.entry.LibraryManagementSystem login user Bob password123
    ```
 
 3. **Borrow a Book**:
    ```bash
-   java -cp target/classes com.lms.sys.LibraryManagementSystem borrow Bob 1234567890
+   java -cp target/classes com.lms.app.entry.LibraryManagementSystem borrow Bob 1234567890
    ```
 
 ---
