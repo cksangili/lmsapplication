@@ -68,6 +68,55 @@ The Library Management System is designed to manage books and users in a library
    java -jar LMSApplication.jar <commands>
    Eg. commands: register user John password1 or login John password1
    ```
+5. **Run the Java Command-line Program**:
+   Download LMSApplication.jar and the following *.bat files from the root path of GitHub repository and run the Java main class by passing commands directly:
+   ```bash
+    add.bat
+    borrow.bat
+    delete.bat
+    list.bat
+    login.bat
+    register.bat
+    return.bat
+    search.bat
+
+  **Run the command as follow**:
+   
+  **Admin Registration and Login**
+  
+    register admin Alice password1
+    login Alice password1
+
+  **Add Book**
+  
+    add "Clean Code" "Robert C. Martin" 5
+    add "Java Unleashed" "Robert" 4
+    add "Code Rules" "Varan" 3
+  
+  **List Books**
+  
+    list
+    
+  **Delete Book**
+  
+    delete "Java Unleashed" "Robert"
+    
+  **User Registration and Login**
+  
+    register user John password1
+    login John password1
+    
+  **Search Book**
+  
+    search "Java Unleashed" "Robert"
+    
+  **Borrow Book**
+  
+    borrow "Java Unleashed" "Robert" "1"
+    
+  **Return Book**
+  
+    return "Java Unleashed" "Robert"
 ---
 
 ## Usage
