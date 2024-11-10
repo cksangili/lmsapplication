@@ -62,7 +62,12 @@ The Library Management System is designed to manage books and users in a library
    ```bash
    java -cp target/classes com.lms.app.entry.LibraryManagementSystem <command>
    ```
-
+3. **Run the JAR Program**:
+   Download LMSApplication.jar from the root path of GitHub repository and run the JAR by passing commands directly:
+   ```bash
+   java -jar LMSApplication.jar <commands>
+   Eg. commands: register user John password1 or login John password1
+   ```
 ---
 
 ## Usage
