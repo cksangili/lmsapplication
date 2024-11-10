@@ -1,2 +1,2 @@
 @echo off
-java LibraryManagementSystem register %1 %2 %3
+java -jar LMSApplication.jar register %1 %2 %3

@@ -1,2 +1,2 @@
 @echo off
-java LibraryManagementSystem borrow %1 %2 %3 %4
+java -jar LMSApplication.jar borrow %1 %2 %3 %4

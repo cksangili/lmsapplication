@@ -1,2 +1,2 @@
 @echo off
-java LibraryManagementSystem add %1 %2 %3
+java -jar LMSApplication.jar add %1 %2 %3

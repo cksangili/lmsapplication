@@ -1,2 +1,2 @@
 @echo off
-java LibraryManagementSystem return %1 %2 %3
+java -jar LMSApplication.jar return %1 %2 %3

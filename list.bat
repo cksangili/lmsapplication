@@ -1,2 +1,2 @@
 @echo off
-java LibraryManagementSystem list
+java -jar LMSApplication.jar list

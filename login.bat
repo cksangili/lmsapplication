@@ -1,2 +1,2 @@
 @echo off
-java LibraryManagementSystem login %1 %2
+java -jar LMSApplication.jar login %1 %2
