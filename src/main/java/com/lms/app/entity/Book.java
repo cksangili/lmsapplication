@@ -6,6 +6,7 @@ import java.util.Objects;
 
 // Book Class
 public class Book implements Serializable {
+    private String isbn;
     private String title;
     private String author;
     private boolean isAvailable;
@@ -46,24 +47,16 @@ public class Book implements Serializable {
     // Override equals() method
     @Override
     public boolean equals(Object obj) {
-        // Check if the objects are the same instance
         if (this == obj) return true;
-
-        // Check if the object is null or not of the same class
         if (obj == null || getClass() != obj.getClass()) return false;
-
-        // Cast the object to a Book
         Book book = (Book) obj;
-
-        // Compare the titles
-        return Objects.equals(title, book.title);
+        return isbn.equals(book.isbn); // Check equality based on unique identifier
     }
 
     // Override hashCode() method
     @Override
     public int hashCode() {
-        // Generate hash code based only on the title field
-        return Objects.hash(title);
+        return Objects.hash(isbn); // Hash code based on the unique identifier
     }
 
     @Override

@@ -7,10 +7,8 @@ import java.util.HashMap;
 
 class SystemLibrary {
     HashMap<String, Book> books = new HashMap<>();
-    private String FILE_NAME = "inventory.ser";
-    private String USER_FILE_NAME = "user.ser";
+    private String FILE_NAME = "books.dat";
     private String lStrResult = "";
-
 
     public String addBook(String title, String author, int inventory) {
         // books.put(title, new Book(title, author, inventory));
@@ -38,7 +36,7 @@ class SystemLibrary {
         HashMap<String, Book> checkBooks = new HashMap<>();
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             checkBooks = (HashMap<String, Book>) in.readObject();
-            //System.out.println("checkBook(1) -> " + checkBooks);
+           // System.out.println("checkBook(1) -> " + checkBooks);
         } catch (FileNotFoundException e) {
             // If the file doesn't exist, initialize an empty HashMap
             //System.out.println("checkBook -> No previous data found, starting with an empty database.");
@@ -134,7 +132,8 @@ class SystemLibrary {
 
     public String searchBook(String title) {
         books = checkBook(title);
-        if (books.containsKey(title)) {
+        //System.out.println("SearchBook()"+books+" - "+books.containsKey(title)+" - "+title+" - "+books.get(title));
+        if(books.containsKey(title)) {
             Book book = books.get(title);
             System.out.println(book);
             lStrResult = title+" Book found.";
@@ -147,10 +146,13 @@ class SystemLibrary {
     }
     // code for update book inventory
     public void updateBook(String title, int inventory) {
+        System.out.println("updateBook(1) ->"+title+" inventory "+inventory);
         books = checkBook(title);
         if (books.containsKey(title)) {
             Book book = books.get(title);
             book.updateInventory(inventory);
+            updateBookMap(books, title, book);
+            System.out.println("updateBook(2) ->"+books);
             System.out.println("Book inventory updated.");
         } else {
             System.out.println("Book not found.");
@@ -161,7 +163,7 @@ class SystemLibrary {
         //System.out.println("updateBookMap() ->"+title+" newBook "+newBook+" map "+map);
 
         if (map != null && map.containsKey(title)) {
-            //map.put(title, newBook);  // Update the Book object with the new details
+            map.put(title, newBook);  // Update the Book object with the new details
             // System.out.println("Book updated in HashMap getInventory()-> "+newBook.getInventory());
         } else {
             System.out.println("Book with the title '" + title + "' not found.");
@@ -170,8 +172,16 @@ class SystemLibrary {
 
     public String deleteBook(String title) {
         books = checkBook(title);
+        //System.out.println("deleteBook(1) -> "+books+" - "+books.containsKey(title)+" - "+title+" - "+books.get(title));
         if (books.containsKey(title)) {
             books.remove(title);
+            //System.out.println("deleteBook(2) -> "+books);
+            try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+                out.writeObject(books);
+                //System.out.println(lStrResult);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             lStrResult = title+" book deleted successfully.";
             System.out.println(lStrResult);
             return lStrResult;

@@ -36,7 +36,7 @@ public class LibrarySystem {
             //System.out.println("Users data loaded. users "+users);
         } catch (FileNotFoundException e) {
             // If the file doesn't exist, initialize an empty HashMap
-            System.out.println("No previous data found, starting with an empty database.");
+            //System.out.println("No previous data found, starting with an empty database.");
             users = new HashMap<>();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class LibraryManagementSystem {
             switch (command.toLowerCase()) {
                 case "register":
                     if (args.length == 4) {
-                        System.out.println(" LMS Register ");
+                        System.out.println("LMS Register ");
                         lStrResult = librarySystem.registerUser(args[1],args[2], args[3]);
                         System.out.println(lStrResult);
 
@@ -28,7 +28,7 @@ public class LibraryManagementSystem {
                     break;
                 case "login":
                     if (args.length == 3) {
-                        System.out.println(" LMS Login ");
+                        System.out.println("LMS Login ");
                         lStrResult = librarySystem.loginUser(args[1], args[2]);
                         System.out.println(lStrResult);
                     } else {
@@ -37,7 +37,7 @@ public class LibraryManagementSystem {
                     break;
                 case "add":
                     if (args.length == 4) {
-                        System.out.println(" LMS Book Add Role-> "+lmsUtility.getRole());
+                        System.out.println("LMS Book Add ");
 
                         //System.out.println("Main Method(add) "+args[1]+ " "+args[2]+ " "+args[3]);
                         if(null!=lmsUtility && lmsUtility.getRole().equals("admin"))
@@ -49,7 +49,7 @@ public class LibraryManagementSystem {
                     }
                     break;
                 case "list":
-                    System.out.println(" LMS Book List Role-> "+lmsUtility.getRole());
+                    System.out.println("LMS Book List ");
                     //System.out.println(" Main Method(list) "+args[0]);
                     if(null!=lmsUtility && lmsUtility.getRole().equals("admin"))
                         library.displayBooks();
@@ -57,22 +57,22 @@ public class LibraryManagementSystem {
                         System.out.println("Only admin can list book.");
                     break;
                 case "search":
-                    System.out.println(" LMS Search Book ");
+                    System.out.println("LMS Search Book ");
                     //System.out.println(" Main Method(search) "+args[1]);
                     library.searchBook(args[1]);
                     break;
                 case "borrow":
-                    System.out.println(" LMS Borrow Book ");
+                    System.out.println("LMS Borrow Book ");
                     // System.out.println(" Main Method(borrow) "+args[1]);
                     library.borrowBook(args[1]);
                     break;
                 case "return":
-                    System.out.println(" LMS Return Book ");
+                    System.out.println("LMS Return Book ");
                     //System.out.println(" Main Method(return) "+args[1]);
                     library.returnBook(args[1]);
                     break;
                 case "delete":
-                    System.out.println(" LMS Delete Book ");
+                    System.out.println("LMS Delete Book ");
                     //System.out.println(" Main Method(delete) "+args[1]);
                     if(null!=lmsUtility && lmsUtility.getRole().equals("admin"))
                         library.deleteBook(args[1]);
